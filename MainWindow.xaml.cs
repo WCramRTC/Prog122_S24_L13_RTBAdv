@@ -54,8 +54,12 @@ namespace Prog122_S24_L13_RTBAdv
             }
             else if (UnderlineRadioButton.IsChecked.Value)
             {
-                entirePage.FontStyle = FontStyles.Oblique;
+                foreach (Paragraph item in entirePage.Blocks)
+                {
+                    item.TextDecorations = TextDecorations.Underline;
+                }
             }
+            
 
 
 
@@ -63,7 +67,7 @@ namespace Prog122_S24_L13_RTBAdv
             //double fontSize = double.Parse(FontSizeComboBox.SelectedValue.ToString());
 
             entirePage.FontSize = GetFontSize();
-            entirePage.
+            
 
             // 5. Add the FlowDocument to the RichTextBox
             FormattedRichTextBox.Document = entirePage;
