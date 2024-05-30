@@ -19,6 +19,9 @@ namespace Prog122_S24_L13_RTBAdv
         public MainWindow()
         {
             InitializeComponent();
-        }
-    }
-}
+
+        } // MainWindow()
+
+    } // class
+
+} // namespace
