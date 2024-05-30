@@ -9,5 +9,160 @@
     Title="MainWindow"
     Height="450"
     Width="800">
- 
+    <Grid
+        Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="*" />
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition
+                Width="Auto" />
+            <ColumnDefinition
+                Width="*" />
+            <ColumnDefinition
+                Width="Auto" />
+            <ColumnDefinition
+                Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- Title Input -->
+        <Label
+            Grid.Row="0"
+            Grid.Column="0"
+            Content="Title:"
+            VerticalAlignment="Center" />
+        <TextBox
+            x:Name="TitleTextBox"
+            Grid.Row="0"
+            Grid.Column="1"
+            Margin="5" />
+
+        <!-- Paragraph Input -->
+        <Label
+            Grid.Row="1"
+            Grid.Column="0"
+            Content="Paragraph:"
+            VerticalAlignment="Top" />
+        <RichTextBox
+            Grid.Row="1"
+            Grid.Column="1"
+            Margin="5"
+            Height="100"
+            Grid.ColumnSpan="3">
+            <FlowDocument>
+                <Paragraph>
+                    <Run
+                        x:Name="runParagraphText" />
+                </Paragraph>
+            </FlowDocument>
+        </RichTextBox>
+
+        <!-- Font Size Options -->
+        <Label
+            Grid.Row="2"
+            Grid.Column="0"
+            Content="Font Size:"
+            VerticalAlignment="Center" />
+        <ComboBox
+            x:Name="FontSizeComboBox"
+            Grid.Row="2"
+            Grid.Column="1"
+            Margin="5"
+            Width="100">
+            <ComboBoxItem
+                Content="10" />
+            <ComboBoxItem
+                Content="12" />
+            <ComboBoxItem
+                Content="14" />
+            <ComboBoxItem
+                Content="16" />
+            <ComboBoxItem
+                Content="18" />
+            <ComboBoxItem
+                Content="20" />
+            <ComboBoxItem
+                Content="22" />
+            <ComboBoxItem
+                Content="24" />
+        </ComboBox>
+
+        <!-- Text Style Options -->
+        <StackPanel
+            Grid.Row="3"
+            Grid.Column="0"
+            Grid.ColumnSpan="4"
+            Orientation="Horizontal"
+            Margin="5">
+            <Label
+                Content="Text Style:"
+                VerticalAlignment="Center"
+                Margin="0,0,5,0" />
+            <RadioButton
+                x:Name="NormalRadioButton"
+                Content="Normal"
+                GroupName="TextStyle"
+                IsChecked="True"
+                Margin="5" />
+            <RadioButton
+                x:Name="ItalicRadioButton"
+                Content="Italic"
+                GroupName="TextStyle"
+                Margin="5" />
+            <RadioButton
+                x:Name="BoldRadioButton"
+                Content="Bold"
+                GroupName="TextStyle"
+                Margin="5" />
+            <RadioButton
+                x:Name="UnderlineRadioButton"
+                Content="Underline"
+                GroupName="TextStyle"
+                Margin="5" />
+        </StackPanel>
+
+        <!-- Add Button -->
+        <Button
+            x:Name="AddButton"
+            Content="Add"
+            Grid.Row="4"
+            Grid.Column="1"
+            Margin="5"
+            Click="AddButton_Click"
+            Grid.ColumnSpan="3" />
+
+        <!-- Display RichTextBox -->
+        <Label
+            Grid.Row="5"
+            Grid.Column="0"
+            Content="Formatted Text:"
+            VerticalAlignment="Top" />
+        <RichTextBox
+            x:Name="FormattedRichTextBox"
+            Grid.Row="5"
+            Grid.Column="1"
+            Margin="5"
+            Grid.ColumnSpan="3" />
+        <Button
+            x:Name="btnSubmit"
+            Grid.Column="3"
+            Content="Submit"
+            HorizontalAlignment="Left"
+            Margin="131,12,0,0"
+            Grid.Row="2"
+            VerticalAlignment="Top"
+            Height="40"
+            Grid.RowSpan="2"
+            Width="132"
+            Click="AddButton_Click" />
+    </Grid>
 </Window>
