@@ -56,16 +56,28 @@ namespace Prog122_S24_L13_RTBAdv
             {
                 entirePage.FontStyle = FontStyles.Oblique;
             }
-            MessageBox.Show(FontSizeComboBox.SelectedValue);
+
+
+
+            //MessageBox.Show(FontSizeComboBox.SelectedValue);
             //double fontSize = double.Parse(FontSizeComboBox.SelectedValue.ToString());
 
-            //entirePage.FontSize = fontSize;
-
+            entirePage.FontSize = GetFontSize();
+            entirePage.
 
             // 5. Add the FlowDocument to the RichTextBox
             FormattedRichTextBox.Document = entirePage;
 
         }
+
+        public double GetFontSize()
+        {
+            ComboBoxItem cbi = FontSizeComboBox.SelectedItem as ComboBoxItem;
+            string content = cbi.Content.ToString();
+            double fontSize = double.Parse(content);
+            return fontSize;
+        }
+
     } // class
 
 } // namespace
